@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-md-12 centered">
+      <div id="clock"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 centered">
+      <%
+        conditions = @weather['weather'].first
+        icon = {
+          '01d' => 'wi-day-sunny',
+          '01n' => 'wi-night-clear',
+          '02d' => 'wi-day-sunny-overcast',
+          '02n' => 'wi-night-cloudy',
+          '03d' => 'wi-day-cloudy',
+          '03n' => 'wi-night-cloudy',
+          '04d' => 'wi-cloudy',
+          '04n' => 'wi-cloudy',
+          '09d' => 'wi-rain',
+          '09n' => 'wi-rain',
+          '10d' => 'wi-day-rain',
+          '10n' => 'wi-night-rain',
+          '11d' => 'wi-day-thunderstorm',
+          '11n' => 'wi-night-thunderstorm',
+          '13d' => 'wi-day-snow',
+          '13n' => 'wi-night-snow'
+        }[conditions['icon']]
+      %>
+      <i class="conditions wi <%= icon %>"></i>
+    </div>
+    <div class="col-md-4 centered">
+      <div class="current-temp">
+        <i class="wi wi-thermometer"></i>
+        <%= @weather['main']['temp'] %>&deg;
+      </div>
+      <div class="hilo-temp">
+        <%= @forecast['list'].first['temp']['min'].round %>&deg;
+        /
+        <%= @forecast['list'].first['temp']['max'].round %>&deg;
+      </div>
+    </div>
+    <div class="col-md-4 centered">
+      <div class="sun">
+        <% if Time.now > @sunset + (60 * 60) %>
+          <i class="wi wi-sunrise"></i><br>
+          <%= @sunrise.strftime('%I:%M%p').downcase %>
+        <% else %>
+          <i class="wi wi-sunset"></i><br>
+          <%= @sunset.strftime('%I:%M%p').downcase %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
