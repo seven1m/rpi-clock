@@ -1,5 +1,7 @@
 # rpi-clock
 
+![screenshot](https://raw.githubusercontent.com/seven1m/rpi-clock/master/screenshot.jpg)
+
 This is a very simple clock and weather page for Raspberry Pi.
 
 I needed a clock in my office and had a spare (cheap) flat-screen TV and a raspberry pi, so this was born.
