@@ -22,8 +22,8 @@ I'm using Raspbian -- you can use any distro, but YMMV.
     ```bash
     #!/bin/bash
 
-    cd /home/pi/status
-    GEM_PATH=/home/pi/.rvm/gems/ruby-2.2.1@status:/home/pi/.rvm/gems/ruby-2.2.1@global /home/pi/.rvm/rubies/ruby-2.2.1/bin/ruby app.rb &
+    cd /home/pi/rpi-clock
+    GEM_PATH=/home/pi/.rvm/gems/ruby-2.2.2@rpi-clock:/home/pi/.rvm/gems/ruby-2.2.2@global /home/pi/.rvm/rubies/ruby-2.2.2/bin/ruby app.rb &
     sleep 30
     midori -e Fullscreen -a http://localhost:4567
     ```
